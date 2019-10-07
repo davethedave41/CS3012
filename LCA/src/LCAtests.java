@@ -4,16 +4,16 @@ import org.junit.jupiter.api.Test;
 
 class LCAtests {
 
-	/* this tree looks like:                             8
+	/* this tree looks like:                     						             8
 	 * 												    / \
 	 * 												   6   9
 	 * 												  / \	\	
 	 * 												 2   7  10
 	 * 												/ \      
-	 * 		                                       1   3
-	 * 													\
-	 * 													 5
-	 * 													/
+	 * 		                                     					       1   3
+	 * 												    \
+	 * 												     5
+	 * 												    /
 	 * 												   4												    
 	 */															
 	
