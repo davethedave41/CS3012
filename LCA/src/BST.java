@@ -18,18 +18,30 @@ public class BST
 	public void insert(int val){
 		if (root == null) { 
 			root = new Node(val);
-			System.out.println("Insertion of val: "+val+" complete");
+			//System.out.println("Insertion of val: "+val+" complete");
 			return;
 		}
 		root = insert(root, val);
-		System.out.println("Insertion of val: "+val+" complete");
+		//System.out.println("Insertion of val: "+val+" complete");
 	}
 	
 	private Node insert(Node x,int val) {
 		if (x == null) return new Node(val);	
-		if      (val < x.data) { x.left  = insert(x.left,val); System.out.println("went left");}  
-		else if (val > x.data) { x.right = insert(x.right,val); System.out.println("went right");}
-		else     System.out.println("already in tree");
+		if      (val < x.data) { x.left  = insert(x.left,val); /*System.out.println("went left");*/}  
+		else if (val > x.data) { x.right = insert(x.right,val); /*System.out.println("went right");*/}
+		//else     System.out.println("already in tree");
+		return x;
+	}
+	
+	public void preOrderTraversal() {
+		preOrderTraversal(root);
+	}
+	
+	private Node preOrderTraversal(Node x) {
+		if(x == null) return null;
+		System.out.print(x.data+", ");
+		preOrderTraversal(x.left);
+		preOrderTraversal(x.right);
 		return x;
 	}
 
