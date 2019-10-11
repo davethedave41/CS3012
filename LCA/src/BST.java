@@ -39,7 +39,7 @@ public class BST
 	
 	private Node preOrderTraversal(Node x) {
 		if(x == null) return null;
-		System.out.print(x.data+", ");
+		System.out.print(x.data+" ");
 		preOrderTraversal(x.left);
 		preOrderTraversal(x.right);
 		return x;
