@@ -5,8 +5,10 @@ import org.junit.jupiter.api.Test;
 class LCAtestEmpty {
 
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	void testEmpty() {
+		BST bst = new BST();
+		Node lca = bst.findLCA(5, 6);		//these values don't exist in the empty tree
+		assertNull(lca, "Should be null because the tree is empty");
 	}
 
 }
