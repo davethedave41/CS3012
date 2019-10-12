@@ -3,12 +3,12 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Disabled;	
 
 
-class LCAtests {
+class LCAtestSimpleLine{
 
 	private String outputPrint;
 	ConsoleToString cP = new ConsoleToString();
 
-	/* this tree looks like:                     						             8
+	/* Tree:                     						           		  8
 	 * 												    / \
 	 * 												   6   9
 	 * 												  / \	\	
@@ -37,22 +37,23 @@ class LCAtests {
 		outputPrint = cP.consoleText(bst);
 		assertEquals("8 6 2 1 3 5 4 7 9 1 0", outputPrint);
 	}
+	/* Tree: 
+	 * 
+	 * 
+	 */
 
-	//@Disabled("Only interested in the testInsert function.")
-	@Test
-	public void testLCA() {				
+	
+	public void testSimpleLineForm() {				
 		BST bst = new BST();		
-		bst.insert(8);					
-		bst.insert(6);
-		bst.insert(7);
+		bst.insert(1);					
 		bst.insert(2);
-		bst.insert(3);
-		bst.insert(5);
-		bst.insert(1);
-		bst.insert(4);
-		bst.insert(9);
-		bst.insert(10); 
-		Node lca = bst.findLCA(1, 4);
-		assertEquals(2, lca.data);
+		bst.insert(8);
+		bst.insert(10);
+		bst.insert(11);
+		bst.insert(12); 
+		Node lca = bst.findLCA(11, 12);
+		assertEquals(11, lca.data, "Expected LCA is 11");
+		lca = bst.findLCA(8, 10);
+		assertEquals(8, lca.data, "Expected LCA is 8");
 	}
 }
