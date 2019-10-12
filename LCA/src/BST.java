@@ -80,6 +80,6 @@ public class BST
 		Node lca = findLCAUtil(root, n1, n2); 
 		if (v1 && v2) 
 			return lca; 
-		return null; 
+		return null;   
 	} 
 } 
