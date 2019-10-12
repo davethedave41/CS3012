@@ -50,7 +50,7 @@ public class BST
 
 		if (node == null) 
 			return null; 
-		
+	
 		
 		Node temp=null; 
 
