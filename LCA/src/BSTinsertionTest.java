@@ -8,13 +8,13 @@ class BSTinsertionTest {
 	private String outputPrint;
 	ConsoleToString cP = new ConsoleToString();
 	
-	/* Tree:                     						           		  8
+	/* Tree:                                             8
 	 * 												    / \
 	 * 												   6   9
 	 * 												  / \	\	
 	 * 												 2   7  10
 	 * 												/ \      
-	 * 		                                     					       1   3
+	 *                                             1   3
 	 * 												    \
 	 * 												     5
 	 * 												    /
