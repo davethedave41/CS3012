@@ -2,9 +2,9 @@ import java.io.PrintStream;
 import java.util.Scanner;
 import java.io.ByteArrayOutputStream;
 
-public class ConsoleToString{  
+public class ConsoleToString{ 
 	
-	public void ConsoleText(){
+	public String consoleText(BST bst){
 		// Create a stream to hold the output
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		PrintStream ps = new PrintStream(baos);
@@ -13,12 +13,12 @@ public class ConsoleToString{
 		// Tell Java to use your special stream
 		System.setOut(ps);
 		// Print some output: goes to your special stream
-		Scanner scans = new Scanner(System.in);
-		System.out.println(scans.nextLine());
+		bst.preOrderTraversal();
 		// Put things back
 		System.out.flush();
 		System.setOut(old);
 		// Show what happened
-		System.out.println("Oh: " + baos.toString());
+		System.out.println(baos.toString());
+		return baos.toString();
 	}
 }  
