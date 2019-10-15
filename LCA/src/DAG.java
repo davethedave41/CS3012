@@ -1,50 +1,74 @@
-import java.util.*;
-/*
-class Vertex 
+// Java program to print DFS traversal from a given given graph 
+import java.io.*; 
+import java.util.*; 
+
+// This class represents a directed graph using adjacency list 
+// representation 
+class DAG 
 { 
-	char key; 
-	List<Vertex> connectedTo;
+	private int V; // No. of vertices 
 
-	Vertex(char key) 
+	// Array of lists for Adjacency List Representation 
+	private LinkedList<Integer> adj[]; 
+
+	// Constructor 
+	DAG(int v) 
 	{ 
-		this.key = key;
-		connectedTo = new LinkedList<>();
-	}
-	
-	public String toString() {
-		return "Vertex key: " + key ;
-	}
-}*/
-/*
-class Edge
-{
-	Vertex start;
-	Vertex end;
-	Edge(Vertex start,Vertex end){
-		this.start = start;
-		this.end = end;
-	}
-}
-*/
+		V = v; 
+		adj = new LinkedList[v]; 
+		for (int i=0; i < v; ++i) 
+			adj[i] = new LinkedList(); 
+	} 
 
-public class DAG 
-{
-	private Vertex vertices[];
-
-	DAG(Vertex vertices[])
+	//Function to add an edge into the graph 
+	void addEdge(int v, int w) 
 	{ 
-		this.vertices = vertices; 
-	}
+		adj[v].add(w); // Add w to v's list. 
+	} 
 
-	/* Insert edges into DAG */
-	public void addEdge(Vertex fromV , Vertex toV) 
-	{
-		
-	}
+	// A function used by DFS 
+	void DFSUtil(int v,boolean visited[]) 
+	{ 
+		// Mark the current node as visited and print it 
+		visited[v] = true; 
+		System.out.print(v+" "); 
 
-	public char findLCA(char startVertex, char key1, char key2)
-	{
-		if(vertices == null) return ' ';
-		return 'a';
-	}
-}
+		// Recur for all the vertices adjacent to this vertex 
+		Iterator<Integer> i = adj[v].listIterator(); 
+		while (i.hasNext()) 
+		{ 
+			int n = i.next(); 
+			if (!visited[n]) 
+				DFSUtil(n, visited); 
+		} 
+	} 
+
+	// The function to do DFS traversal. It uses recursive DFSUtil() 
+	void DFS(int v) 
+	{ 
+		// Mark all the vertices as not visited(set as 
+		// false by default in java) 
+		boolean visited[] = new boolean[V]; 
+
+		// Call the recursive helper function to print DFS traversal 
+		DFSUtil(v, visited); 
+	} 
+
+	public static void main(String args[]) 
+	{ 
+		DAG g = new DAG(4); 
+
+		g.addEdge(0, 1); 
+		g.addEdge(0, 2); 
+		g.addEdge(1, 2); 
+		g.addEdge(2, 0); 
+		g.addEdge(2, 3); 
+		g.addEdge(3, 3); 
+
+		System.out.println("Following is Depth First Traversal "+ 
+				"(starting from vertex 2)"); 
+
+		g.DFS(2); 
+	} 
+} 
+// This code is contributed by Aakash Hasija 
