@@ -5,7 +5,7 @@ class Node
 
 	public Node(int item) 
 	{ 
-		data = item; 
+		data = item;
 		left = right = null; 
 	} 
 } 

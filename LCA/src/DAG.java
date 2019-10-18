@@ -6,6 +6,8 @@ import java.util.*;
 // representation 
 class DAG 
 { 
+	int depth = 0;
+	int currentDepth = depth;
 	int currentLCA = -1;
 	boolean connected = false;
 	private int V; // No. of vertices 
@@ -52,20 +54,29 @@ class DAG
 
 	int findLCAUtil(int x, int n1, int n2, boolean visited[]) {
 		visited[x] = true;
+		int show = 0;
 		connected = false;
 		boolean visited2[] = new boolean[visited.length];
 		boolean visited3[] = new boolean[visited.length];
+		if(n1 == n2) {
+			return n1;
+		}
 		if(isConnected(x, n1, visited2)) {
 			connected = false;
-			if(isConnected(x, n2, visited3)) {
+			if(isConnected(x, n2, visited3) && (depth > currentDepth | (currentDepth == 0 && depth == 0))) {
+				currentDepth = depth;
 				currentLCA = x;
+				show = currentLCA;
 			}
 		}
 		Iterator<Integer> i = adj[x].listIterator();
 		while (i.hasNext()) {
+			depth++;
 			int n = i.next();
-			if (!visited[n]) 
+			if (!visited[n]) {
 				findLCAUtil(n, n1, n2, visited);
+			}
+			depth--;
 		}
 		return currentLCA;
 	}
@@ -78,11 +89,12 @@ class DAG
 		// false by default in java) 
 		boolean visited[] = new boolean[V];
 		lca = findLCAUtil(v, n1, n2, visited);
-		if(lca == 0 | lca != 0) {
-			System.out.println("\nThe LCA  for nodes "+ n1 +" and "+ n2 +" is : " + lca);
+		if(lca == -1) {
+			System.out.println("No LCA exists for these two nodes");
 			return lca;
 		}
 		else {
+			System.out.println("\nThe LCA  for nodes "+ n1 +" and "+ n2 +" is : " + lca);
 			return lca;				// 0 will represent the null value in this case
 		}
 	} 
@@ -98,8 +110,6 @@ class DAG
 		g.addEdge(4, 5);	
 		g.addEdge(3, 5); 
 		g.addEdge(5, 6); 
-		boolean[] visited = new boolean[7];
-		System.out.println(g.isConnected(0, 3, visited));
-		g.findLCA(0, 5, 3);
+		g.findLCA(0, 5, 6);
 	} 
 } 

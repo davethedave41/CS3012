@@ -26,7 +26,7 @@ class BSTinsertionTest {
 	public void testInsert() {
 		BST bst = new BST();
 		bst.insert(8);					
-		bst.insert(6);
+		bst.insert(6); 
 		bst.insert(7);
 		bst.insert(2);
 		bst.insert(3);

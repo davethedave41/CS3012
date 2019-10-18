@@ -7,7 +7,7 @@ public class ConsoleToString{
 	public String consoleText(BST bst){
 		// Create a stream to hold the output
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
-		PrintStream ps = new PrintStream(baos);
+		PrintStream ps = new PrintStream(baos); 
 		// IMPORTANT: Save the old System.out!
 		PrintStream old = System.out;
 		// Tell Java to use your special stream
