@@ -7,7 +7,8 @@ class Node
 	{ 
 		data = item;
 		left = right = null; 
-	} 
+	}
+	public Node(){}
 } 
 
 public class BST 
@@ -24,7 +25,7 @@ public class BST
 		root = insert(root, val);
 		//System.out.println("Insertion of val: "+val+" complete");
 	}
-
+	
 	private Node insert(Node x,int val) {
 		if (x == null) return new Node(val);	
 		if      (val < x.data) { x.left  = insert(x.left,val); /*System.out.println("went left");*/}  
