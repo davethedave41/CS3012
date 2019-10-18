@@ -8,6 +8,10 @@ class DAG
 { 
 	int depth = 0;
 	int currentDepth = depth;
+	int connectionDepth = 0;
+	int currentCD = connectionDepth;
+	int shortestConnectionN1 = 99;
+	int shortestConnectionN2 = 99;
 	int currentLCA = -1;
 	boolean connected = false;
 	private int V; // No. of vertices 
@@ -31,42 +35,56 @@ class DAG
 	} 
 
 	// A function used by DFS 
-	boolean isConnected(int x, int n1, boolean visited[]) 
+	boolean isConnected(int x, int n1, boolean visited[], boolean isSecondCall) 
 	{ 
 		// Mark the current node as visited and print it 
 		visited[x] = true; 
 		if(n1 == x) {
+			currentCD = connectionDepth;
+			//System.out.println(currentCD);
 			connected = true;
+			if(!isSecondCall && shortestConnectionN1 > currentCD) {
+				shortestConnectionN1 = currentCD;
+				System.out.println(shortestConnectionN1);
+			}
+			if(isSecondCall && shortestConnectionN2 > currentCD)
+				shortestConnectionN2 = currentCD;
 			return connected;
 		}
 		// Recur for all the vertices adjacent to this vertex 
 		Iterator<Integer> i = adj[x].listIterator(); 
 		while (i.hasNext()) 
 		{ 
+			connectionDepth++;
 			int n = i.next(); 
 			if (!visited[n]) 
-				isConnected(n, n1, visited);
+				isConnected(n, n1, visited, isSecondCall);
 			if(connected)
 				return connected;
+			connectionDepth--;
 		}
 		return connected;
 	} 
 
 	int findLCAUtil(int x, int n1, int n2, boolean visited[]) {
 		visited[x] = true;
-		int show = 0;
 		connected = false;
+		boolean isSecondCall = false;
 		boolean visited2[] = new boolean[visited.length];
 		boolean visited3[] = new boolean[visited.length];
 		if(n1 == n2) {
 			return n1;
 		}
-		if(isConnected(x, n1, visited2)) {
+		if(isConnected(x, n1, visited2, isSecondCall)) {
 			connected = false;
-			if(isConnected(x, n2, visited3) && (depth > currentDepth | (currentDepth == 0 && depth == 0))) {
+			connectionDepth = 0;
+			isSecondCall = true;
+			currentCD = 0;
+			if(isConnected(x, n2, visited3, isSecondCall)
+				&& (depth > currentDepth | (currentDepth == 0 && depth == 0)
+				&&  shortestConnectionN2 == currentCD)) {
 				currentDepth = depth;
 				currentLCA = x;
-				show = currentLCA;
 			}
 		}
 		Iterator<Integer> i = adj[x].listIterator();
@@ -94,7 +112,7 @@ class DAG
 			return lca;
 		}
 		else {
-			System.out.println("\nThe LCA  for nodes "+ n1 +" and "+ n2 +" is : " + lca);
+			System.out.println("The LCA  for nodes "+ n1 +" and "+ n2 +" is -> " + lca);
 			return lca;				// 0 will represent the null value in this case
 		}
 	} 
