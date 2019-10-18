@@ -1,22 +1,23 @@
 # Biography of Alain Colmerauer, the creator of Prolog
 ![Alain](https://cacm.acm.org/system/assets/0002/7405/052217_Association_for_Logic_Programming_Colmerauer.large.jpeg?1495462701&1495462700)
-
 ### Overview
-
-Alain Colmerauer (24 January 1941 – 12 May 2017) was a French computer scientist. He was a professor at Aix-Marseille University, and the creator of the logic programming language Prolog.
-
+Alain Colmerauer (24 January 1941 – 12 May 2017) was a French computer scientist. He was a professor at Aix-Marseille University, and the creator of the logic programming language Prolog.[ Source.](https://en.wikipedia.org/wiki/Alain_Colmerauer)
 ### Early Life
-
-He earned a degree in computer science from the Institut polytechnique de Grenoble (Grenoble Institute of Technology) in 1963, and a doctorate in the discipline in 1967 from the École nationale supérieure d'informatique et de mathématiques appliquées de Grenoble, which is part of the Institut.
-
+He earned a degree in computer science from the Institut polytechnique de Grenoble (Grenoble Institute of Technology) in 1963, and a doctorate in the discipline in 1967 from the École nationale supérieure d'informatique et de mathématiques appliquées de Grenoble, which is part of the Institut. [Early life Source.](https://en.wikipedia.org/wiki/Alain_Colmerauer)
 ### Before Prolog
-
-Alain Colmerauer spent 1967–1970 as assistant professor at the University of Montreal, where he created Q-Systems, a method of directed graph transformations according to given grammar rules. Colmerauer moved to the University of Aix-Marseille at Luminy in 1970 as Professeur 2ème classe (associate professor). He was promoted in 1979 to Professeur 1ère classe (Full Professor), and in 1988 to Professeur classe exceptionnelle (University Professor).
-
+Alain Colmerauer spent 1967–1970 as assistant professor at the University of Montreal, where he created Q-Systems, a method of directed graph transformations according to given grammar rules. Colmerauer moved to the University of Aix-Marseille at Luminy in 1970 as Professeur 2ème classe (associate professor). He was promoted in 1979 to Professeur 1ère classe (Full Professor), and in 1988 to Professeur classe exceptionnelle (University Professor). 
+Alain went over to Canada to the University of Montreal as a coopérant. The coopérants were young French university graduates who, under a scheme devised by De Gaulle's government, were sent to work for two years in developing countries in lieu of their compulsory military service. During that time they received only army pay. He became head of the machine translation project because the previous one had left. They used the preferred linguistic paradigm of the time which was the transformational grammar (TG). Alain was well acquainted with the TG of Noam Chomsky through his wife, who was writing her PhD thesis on it. Then they went on to use his newly found Q-Systems (which he coded in Algol himself in the space of six weeks) instead of W-grammar.
+[ Early work source.](http://unprofessionaltranslation.blogspot.com/2017/06/alain-colmerauer-machine-translation.html)
 ### The Making of Prolog
+He was the center of a research group that, in the early 1970s, first conceived of Prolog (an abbreviation for "programmation en logique," which is French for "programming in logic") to refer to the software tool designed to implement a man-machine communication system in natural language, a general-purpose logic programming language rooted in first-order logic that is well-suited for tasks that benefit from rule-based logical queries such as searching databases, voice control systems, and filling templates.
+In 1972, Colmerauer worked with Philippe Roussel to develop the first Prolog system and its first implementations were interpreters.
+Robert Anthony Kowalski is a logician and computer scientist, whose research is concerned with developing both human-oriented models of computing and computational models of human thinking. He came down to Marseilles for a few months as requested by Alain because of his interest in Robert's work, and together they worked on how to use logic to represent grammars and how to use theorem provers for parsing.
+>"I have tried to document as best I could our various contributions to that idea in an article published in CACM, 1988, and more recently in a History of Logic Programming, published in 2014. In summary, however, it is probably fair to say that my own contributions were mainly philosophical and Alain’s were more practical. In particular, Alain’s work led in the same summer of 1972 to the design and implementation of the logic programming language Prolog."[-Kowalski on working with Alain for those few months](https://www.doc.ic.ac.uk/~rak/history.html)
+They ran a whole series of provers written in Algol-W on an IBM 360-44 that was in their computing center. The machine had 900Kb of internal memory and had no virtual memory. It took 1Mb of memory to execute the programs.
+A primitive natural language communication system was then developed by the whole team
+Prolog, as an elegant realization of programming in logic, has apparently influenced a generation of researchers. It has been the basis for research in a variety of application areas, including natural language understanding and dialog, planning, symbolic computing, and probabilistic programming. Notably, Prolog played a key role in IBM's Watson question answering system.
+### Present
+Alain Colmerauer, a great computer scientist and of course a father of the logic programming language Prolog, sadly passed away on May 15 at the age of 76 in 2017. I believe that he was a key engineer of the previous century because he invented one of the first logic programming languages and to this day it remains one of the most popular languages used for computational linguistics and artificial intelligence. As well as that there is his interest in machine processing, especially natural language processing, and with this programming language you can really see the power of logic programming and how it can be used for machine learning, AI and many other applications. Alain Colmerauer spread awareness of the fact that AI is the future and he knew that the best way to do something is to have a systematic model for it.
+Alain’s work piqued my interest after being taught discrete maths and all about the formation of regular, formal languages etc, and also being introduced to Prolog was how I came to find out about him.
 
-He was the center of a research group that, in the early 1970s, first conceived of Prolog (an abbreviation for "programmation en logique," which is French for "programming in logic"), a general-purpose logic programming language rooted in first-order logic that is well-suited for tasks that benefit from rule-based logical queries such as searching databases, voice control systems, and filling templates.
-In 1972, Colmerauer worked with Philippe Roussel to develop the first Prolog system; its first implementations were interpreters.
 
-### RIP
-Alain Colmerauer, a great computer scientist and of course a father of the logic programming language Prolog, sadly passed away on May 15 at the age of 76 in 2017.
