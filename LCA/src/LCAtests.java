@@ -160,32 +160,66 @@ class LCAtests {
 	
 	/* Tree:                                             8
 	 * 												    / \
-	 * 												   6   8
+	 * 												   8   9
 	 * 												  / \	\	
-	 * 												 2   7  10
-	 * 												/ \      
-	 *                                             1   3
-	 * 												    \
-	 * 												     5
-	 * 												    /
-	 * 												   4												    
+	 * 												 7   N   10
+	 * 												/       
+	 *                                             1   
+	 *                                            / \    
+	 * 											 N	 3    
+	 * 												/ \
+	 *                                             3   4  
+	 * 												   												    
 	 */	
 
+	/*  Two of the same node in the tree, I decided to make keys
+		already present in the tree be placed in the left subtree of the identical key */ 
 	@Test
-	void testTypicalBSTSK() { /*Two of the same node in the tree*/ 
+	void testSameKeys1() { 
 		BST bst = new BST();
 		bst.insert(8);					
-		bst.insert(6);
-		bst.insert(7);
-		bst.insert(2);
-		bst.insert(3);
-		bst.insert(5);
-		bst.insert(1);
-		bst.insert(4);
+		bst.insert(8);
 		bst.insert(9);
 		bst.insert(10);
-		Node lca = bst.findLCA(99, 3);
-		assertNull(lca, "Should be null because this key is not in the tree");
+		bst.insert(7);
+		bst.insert(1);
+		bst.insert(3);
+		bst.insert(4);
+		bst.insert(3);
+		Node lca = bst.findLCA(1, 8);
+		assertEquals(8, lca.data, "Should be 8");
+	}
+	
+	@Test
+	void testSameKeys2() { 
+		BST bst = new BST();
+		bst.insert(8);					
+		bst.insert(8);
+		bst.insert(9);
+		bst.insert(10);
+		bst.insert(7);
+		bst.insert(1);
+		bst.insert(3);
+		bst.insert(4);
+		bst.insert(3);
+		Node lca = bst.findLCA(3, 4);
+		assertEquals(3, lca.data, "Should be 3");
+	}
+	
+	@Test
+	void testSameKeys3() { 
+		BST bst = new BST();
+		bst.insert(8);					
+		bst.insert(8);
+		bst.insert(9);
+		bst.insert(10);
+		bst.insert(7);
+		bst.insert(1);
+		bst.insert(3);
+		bst.insert(4);
+		bst.insert(3);
+		Node lca = bst.findLCA(3, 10);
+		assertEquals(8, lca.data, "Should be 8");
 	}
 	
 }

@@ -28,8 +28,9 @@ public class BST
 	private Node insert(Node x,int val) {
 		if (x == null) return new Node(val);	
 		if      (val < x.data) { x.left  = insert(x.left,val); /*System.out.println("went left");*/}  
-		else if (val > x.data) { x.right = insert(x.right,val); /*System.out.println("went right");*/}
-		//else     System.out.println("already in tree");
+		else if (val > x.data) { x.right = insert(x.right,val); /*System.out.println("went right"); */}
+		else                     x.left  = insert(x.left, val); /* Tree where nodes already present in the tree
+																are placed in their left subtree */
 		return x;
 	}
 
