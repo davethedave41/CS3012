@@ -140,7 +140,7 @@ class LCAtests {
 		Node lca = bst.findLCA(7, 3);
 		assertEquals(6, lca.data, "Should be 6");
 	}
-	
+
 	@Test
 	void testTypicalBSTNE() { /*test to find LCA against a tree that has one key that doesn't exist in the tree*/ 
 		BST bst = new BST();
@@ -157,7 +157,7 @@ class LCAtests {
 		Node lca = bst.findLCA(99, 3);
 		assertNull(lca, "Should be null because this key is not in the tree");
 	}
-	
+
 	/* Tree:                                             8
 	 * 												    / \
 	 * 												   8   9
@@ -189,7 +189,7 @@ class LCAtests {
 		Node lca = bst.findLCA(1, 8);
 		assertEquals(8, lca.data, "Should be 8");
 	}
-	
+
 	@Test
 	void testSameKeys2() { 
 		BST bst = new BST();
@@ -205,7 +205,7 @@ class LCAtests {
 		Node lca = bst.findLCA(3, 4);
 		assertEquals(3, lca.data, "Should be 3");
 	}
-	
+
 	@Test
 	void testSameKeys3() { 
 		BST bst = new BST();
@@ -221,5 +221,4 @@ class LCAtests {
 		Node lca = bst.findLCA(3, 10);
 		assertEquals(8, lca.data, "Should be 8");
 	}
-	
 }
