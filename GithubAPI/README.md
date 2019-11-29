@@ -10,3 +10,5 @@ For my second graph I iterated through google repos again but this time I went t
 ___
 EDIT: I clutched up let's get it. The graph now has labels of the corresponding language and its bar chart. I decicded to keep in the "two apps feature" and now have a total of four different screens. "/app1" and "/app4" are the chart classes that show a diagram with the data, "/app3" and "/app4" are the classes that show a dictionary with all the contents of the graph in text.
 
+![img](https://github.com/davethedave41/LCA/blob/master/GithubAPI/Images/gitdata.PNG)
+
